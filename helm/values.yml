@@ -1,0 +1,13 @@
+jdbcOverwrite:
+  enable: true
+  url: "jdbc:postgresql://sonarqube-db.clyxprpcx38y.us-west-1.rds.amazonaws.com:5432/sonarqube"
+  username: "sonarqube"
+  password: "ChangeMe1234!"
+
+service:
+  type: ClusterIP # Since there's no LoadBalancer or Ingress, we use ClusterIP
+
+persistence:
+  enabled: true
+  storageClass: "gp2" # Use AWS gp2 EBS for persistence
+  size: 10Gi
