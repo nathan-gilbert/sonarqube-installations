@@ -1,1 +1,1 @@
-# sonarqube-installations
+# Install SonarQube
