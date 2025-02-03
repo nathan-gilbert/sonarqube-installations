@@ -1,8 +1,17 @@
-jdbcOverwrite:
-  enable: true
-  url: "jdbc:postgresql://sonarqube-db.clyxprpcx38y.us-west-1.rds.amazonaws.com:5432/sonarqube"
-  username: "sonarqube"
-  password: "ChangeMe1234!"
+monitoringPasscode: "ChangeMe1234!" # Password for Prometheus monitoring
+# edition: "enterprise" # SonarQube edition, can be "developer" or "enterprise", can't be set if community.enabled is true
+community.enabled: true # Enable SonarQube Community Edition
+
+# Using external database
+#postgresql:
+#  enabled: false
+
+# External database configuration
+#jdbcOverwrite:
+#  enable: true
+#  url: "jdbc:postgresql://sonarqube-db.clyxprpcx38y.us-west-1.rds.amazonaws.com:5432/sonarqube"
+#  username: "sonarqube"
+#  password: "ChangeMe1234!"
 
 service:
   type: ClusterIP # Since there's no LoadBalancer or Ingress, we use ClusterIP
