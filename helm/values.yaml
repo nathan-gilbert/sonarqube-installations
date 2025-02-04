@@ -1,6 +1,8 @@
 monitoringPasscode: "ChangeMe1234!" # Password for Prometheus monitoring
+
 # edition: "enterprise" # SonarQube edition, can be "developer" or "enterprise", can't be set if community.enabled is true
-community.enabled: true # Enable SonarQube Community Edition
+community:
+  enabled: true # Enable SonarQube Community Edition
 
 # Using external database
 #postgresql:
@@ -18,5 +20,11 @@ service:
 
 persistence:
   enabled: true
-  storageClass: "gp2" # Use AWS gp2 EBS for persistence
-  size: 10Gi
+  storageClass: gp2
+
+postgresql:
+  postgresqlUsername: "sonarUser"
+  postgresqlPassword: "sonarPass"
+  postgresqlDatabase: "sonarDB"
+  persistence:
+    storageClass: gp2
