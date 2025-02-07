@@ -2,18 +2,31 @@
 
 ## Steps
 
+### Add Helm Chart
+
 ```bash
 helm repo add sonarqube <https://SonarSource.github.io/helm-chart-sonarqube>
 helm repo update
 ```
 
-Create namespace:
+### Create namespace
+
 `kubectl create namespace sonarqube`
 
-Install SonarQube:
+### Install SonarQube
+
 `helm install sonarqube sonarqube/sonarqube -n sonarqube -f values.yaml`
 
-Uninstall SonarQube:
+### Useful commands
+
+```bash
+k8s get pods -n sonarqube
+k8s get pods --namespace sonarqube -l "app=sonarqube,release=sonarqube" -o jsonpath="{.items[0].metadata.name}"
+k8s logs sonarqube-sonarqube-0 -n sonarqube
+k8s get po,svc,pv -n sonarqube
+```
+
+### Uninstall SonarQube
 
 1. Find the installation: `helm list`
 2. Remove it: `helm delete <name>`
