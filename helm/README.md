@@ -30,3 +30,12 @@ k8s get po,svc,pv -n sonarqube
 
 1. Find the installation: `helm list`
 2. Remove it: `helm delete <name>`
+
+## Install Ingress
+
+1. `helm repo add ingress-nginx <https://kubernetes.github.io/ingress-nginx>`
+2. `helm repo update`
+3. `helm install ingress-nginx ingress-nginx/ingress-nginx --namespace ingress-nginx --create-namespace`
+4. `k8s get service --namespace ingress-nginx ingress-nginx-controller --output wide --watch`
+5. `k8s apply -f ingress.yaml`
+6. `k8s get svc -n ingress-nginx` or `k8s get ing -n sonarqube`

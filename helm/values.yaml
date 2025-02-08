@@ -1,8 +1,9 @@
 monitoringPasscode: "ChangeMe1234!" # Password for Prometheus monitoring
 
-# edition: "enterprise" # SonarQube edition, can be "developer" or "enterprise", can't be set if community.enabled is true
-community:
-  enabled: true # Enable SonarQube Community Edition
+#edition: "enterprise" # SonarQube edition, can be "developer" or "enterprise", can't be set if community.enabled is true
+edition: "developer" # SonarQube edition, can be "developer" or "enterprise", can't be set if community.enabled is true
+#community:
+#  enabled: true # Enable SonarQube Community Edition
 
 # Using external database
 #postgresql:
