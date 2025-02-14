@@ -39,8 +39,7 @@ resource "helm_release" "sonarqube" {
     <<EOF
 monitoringPasscode: "ChangeMe1234!"
 
-community:
-  enabled: true
+edition: enterprise
 
 service:
   type: ClusterIP
